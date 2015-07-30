@@ -118,7 +118,7 @@ Be sure to clone using the *Apache Committer* URLs, as found on the
 [/download/code/](repositories) page:
 
     git clone https://git-wip-us.apache.org/repos/asf/incubator-taverna-maven-parent.git
-    git clone https://git-wip-us.apache.org/repos/asf/incubator-taverna-maven-language.git
+    git clone https://git-wip-us.apache.org/repos/asf/incubator-taverna-language.git
 
 Note that you do not need to clone the repositories which are already
 released and which don't form part of this release.
@@ -378,7 +378,7 @@ You can leave the staging repository *Open* until you have released all the
 projects that will form part of this *[VOTE]*, e.g. you can deploy both
 `taverna-maven-parent` and `taverna-language` using the same staging repository.
 
-When all artifacts to be deployed are in the staging repository, tick the box
+**Important** - When all artifacts to be deployed are in the staging repository, tick the box
 next to it and click *Close*.
 
 **DO NOT CLICK RELEASE YET** - the release candidate must pass *[VOTE]* emails
@@ -407,7 +407,7 @@ still under *[VOTE]*, first remove them with `svn rm`:
     cd dist/source
     svn rm *
 
-Retrieve the source archives from the staging repository by looking for
+Now go back to the *dist* directory. Retrieve the source archives from the staging repository by looking for
 `-*source-release.zip` (not `sources.jar`!) in the
 staging repository, located under the
 folder corresponding to the groupID and artifactId of the
@@ -436,7 +436,7 @@ Under `source/`, make a corresponding versioned folder for each product,
 and *include the RC number*, avoiding confusion in case you need to
 make a second release candidate:
 
-    mkdir source/averna-language-0.15.0-incubating-RC2
+    mkdir source/taverna-language-0.15.0-incubating-RC2
     mkdir source/taverna-parent-1-incubating-RC2
     mv *language*release* source/taverna-language-0.15.0-incubating-RC2
     mv *parent*release* source/taverna-parent-1-incubating-RC2
@@ -492,7 +492,8 @@ from IPMC members are **binding**.
 ### Vote email to dev@taverna
 
 To start the release vote, modify the below example and send to dev@taverna.
-Remember `[VOTE]` in the subject line.
+Remember `[VOTE]` in the subject line and change the version number to match the
+release candidate.
 
 Subject: [VOTE] Release Apache Taverna Language 0.15.0-incubating RC2
 
@@ -565,7 +566,14 @@ Anyone can participate in testing and voting, not just
 committers, please feel free to try out the release candidate
 and provide your votes.
 
+### Discuss email to dev@taverna
 
+It is also recommended to start the discussion around the release candidate with
+a separate thread with subject  
+
+[DISCUSS]: Release Apache Taverna Language 0.15.0-incubating RC2  
+
+Remember to change the version number as appropriate for the release candidate.
 
 
 
